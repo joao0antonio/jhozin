@@ -1,0 +1,14 @@
+/* Estilos customizados para a sua biblioteca digital */
+/* Você pode adicionar estilos adicionais aqui */
+
+body {
+    padding-top: 4.5rem; /* Ajuste para o navbar fixo no topo */
+}
+
+.card {
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Efeito de levantar ao passar o mouse */
+}
