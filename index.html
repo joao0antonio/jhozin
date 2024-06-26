@@ -8,32 +8,55 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: black; /* Cor de fundo preta */
+            color: white; /* Cor do texto branco */
+        }
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .card-title {
+            text-align: center;
+        }
+        /* Efeito de transição para os carrosséis */
+        .carousel-item {
+            transition: transform 0.6s ease;
+        }
+        .carousel-inner {
+            overflow: hidden; /* Evita que os itens do carrossel vazem para fora do contêiner */
+        }
+    </style>
 </head>
 
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Biblion</a>
+                <a class="navbar-brand text-center" href="#">Biblion</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#romance" data-bs-toggle="tab">Romance</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Livros</a>
+                            <a class="nav-link" href="#comedia" data-bs-toggle="tab">Comédia</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Autores</a>
+                            <a class="nav-link" href="#ficcao" data-bs-toggle="tab">Ficção</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Sobre</a>
+                            <a class="nav-link" href="#aventura" data-bs-toggle="tab">Aventura</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#terror" data-bs-toggle="tab">Terror</a>
                         </li>
                     </ul>
                 </div>
@@ -42,36 +65,552 @@
     </header>
 
     <main class="container mt-4">
-        <section id="destaques">
-            <h2 class="mb-4">Livros em Destaque</h2>
-            <div class="row">
-                <!-- Exemplo de cartão de livro -->
-                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
-                    <div class="card">
-                        <img src="placeholder.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Título do Livro</h5>
-                            <p class="card-text">Descrição breve do livro.</p>
-                            <a href="#" class="btn btn-primary">Ver detalhes</a>
+        <section id="abas">
+            <h2 class="mb-4">Adicionar Livros</h2>
+            <div class="tab-content" id="myTabContent">
+                <!-- Aba de Romance -->
+                <div class="tab-pane fade show active" id="romance" role="tabpanel" aria-labelledby="romance-tab">
+                    <div id="romance-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Livro 1 -->
+                            <div class="carousel-item active">
+                                <div class="row row-cols-1 row-cols-md-4 g-4">
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+1"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Orgulho e Preconceito</h5>
+                                                <p class="card-text">Uma história de amor clássica.</p>
+                                                <p class="card-text">Preço: R$ 26,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 2 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+2"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Como Eu Era Antes de Você</h5>
+                                                <p class="card-text">Uma história emocionante sobre escolhas.</p>
+                                                <p class="card-text">Preço: R$ 29,90</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 3 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+3"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">A Culpa É das Estrelas</h5>
+                                                <p class="card-text">Uma história tocante sobre amor e perda.</p>
+                                                <p class="card-text">Preço: R$ 23,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 4 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+4"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Romeu e Julieta</h5>
+                                                <p class="card-text">Um clássico shakespeariano de amor proibido.</p>
+                                                <p class="card-text">Preço: R$ 27,80</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 5 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+5"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">E o Vento Levou</h5>
+                                                <p class="card-text">Um épico de amor e guerra durante a Guerra Civil Americana.</p>
+                                                <p class="card-text">Preço: R$ 31,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 6 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Romance+Livro+6"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Anna Karenina</h5>
+                                                <p class="card-text">Um romance clássico da literatura russa.</p>
+                                                <p class="card-text">Preço: R$ 28,90</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#romance-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#romance-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
                     </div>
                 </div>
-                <!-- Fim do exemplo -->
+                <!-- Aba de Comédia -->
+                <div class="tab-pane fade" id="comedia" role="tabpanel" aria-labelledby="comedia-tab">
+                    <div id="comedia-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Livro 1 -->
+                            <div class="carousel-item active">
+                                <div class="row row-cols-1 row-cols-md-4 g-4">
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+1"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Guia do Mochileiro das Galáxias</h5>
+                                                <p class="card-text">Uma aventura cômica no espaço.</p>
+                                                <p class="card-text">Preço: R$ 22,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 2 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+2"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Diário de um Banana</h5>
+                                                <p class="card-text">As desventuras de um adolescente.</p>
+                                                <p class="card-text">Preço: R$ 18,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 3 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+3"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">A Vida e Outros Detalhes Insignificantes</h5>
+                                                <p class="card-text">Um olhar humorístico sobre situações do dia a dia.</p>
+                                                <p class="card-text">Preço: R$ 20,20</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 4 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+4"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Código da Vinci</h5>
+                                                <p class="card-text">Uma trama intrigante com toques de humor.</p>
+                                                <p class="card-text">Preço: R$ 32,80</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 5 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+5"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Se Beber, Não Case!</h5>
+                                                <p class="card-text">Uma comédia sobre uma despedida de solteiro que sai do controle.</p>
+                                                <p class="card-text">Preço: R$ 25,90</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 6 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Comedia+Livro+6"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Amor é Contagioso</h5>
+                                                <p class="card-text">Uma comédia romântica leve e engraçada.</p>
+                                                <p class="card-text">Preço: R$ 21,75</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#comedia-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#comedia-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Aba de Ficção -->
+                <div class="tab-pane fade" id="ficcao" role="tabpanel" aria-labelledby="ficcao-tab">
+                    <div id="ficcao-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Livro 1 -->
+                            <div class="carousel-item active">
+                                <div class="row row-cols-1 row-cols-md-4 g-4">
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+1"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">A Origem das Espécies</h5>
+                                                <p class="card-text">Um clássico da ficção científica.</p>
+                                                <p class="card-text">Preço: R$ 30,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 2 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+2"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">1984</h5>
+                                                <p class="card-text">Um clássico distópico que previu o futuro.</p>
+                                                <p class="card-text">Preço: R$ 24,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 3 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+3"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Neuromancer</h5>
+                                                <p class="card-text">Um marco no cyberpunk e na ficção científica.</p>
+                                                <p class="card-text">Preço: R$ 28,75</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 4 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+4"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Fundação</h5>
+                                                <p class="card-text">Uma saga épica no espaço.</p>
+                                                <p class="card-text">Preço: R$ 35,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 5 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+5"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Duna</h5>
+                                                <p class="card-text">Uma obra-prima da ficção científica.</p>
+                                                <p class="card-text">Preço: R$ 33,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 6 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Ficcao+Livro+6"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Eu, Robô</h5>
+                                                <p class="card-text">Asimov introduz as Três Leis da Robótica.</p>
+                                                <p class="card-text">Preço: R$ 26,80</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#ficcao-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#ficcao-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Aba de Aventura -->
+                <div class="tab-pane fade" id="aventura" role="tabpanel" aria-labelledby="aventura-tab">
+                    <div id="aventura-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Livro 1 -->
+                            <div class="carousel-item active">
+                                <div class="row row-cols-1 row-cols-md-4 g-4">
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+1"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Hobbit</h5>
+                                                <p class="card-text">Uma jornada inesperada.</p>
+                                                <p class="card-text">Preço: R$ 29,75</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 2 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+2"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">A Ilha do Tesouro</h5>
+                                                <p class="card-text">Uma clássica história de piratas.</p>
+                                                <p class="card-text">Preço: R$ 26,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 3 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+3"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Viagem ao Centro da Terra</h5>
+                                                <p class="card-text">Uma expedição no centro do planeta.</p>
+                                                <p class="card-text">Preço: R$ 23,90</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 4 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+4"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">As Aventuras de Sherlock Holmes</h5>
+                                                <p class="card-text">Mistérios e investigações.</p>
+                                                <p class="card-text">Preço: R$ 27,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 5 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+5"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Moby Dick</h5>
+                                                <p class="card-text">Uma caçada épica a uma baleia branca.</p>
+                                                <p class="card-text">Preço: R$ 31,20</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 6 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Aventura+Livro+6"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">A Volta ao Mundo em 80 Dias</h5>
+                                                <p class="card-text">Uma corrida contra o tempo.</p>
+                                                <p class="card-text">Preço: R$ 25,40</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#aventura-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#aventura-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Aba de Terror -->
+                <div class="tab-pane fade" id="terror" role="tabpanel" aria-labelledby="terror-tab">
+                    <div id="terror-carousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            <!-- Livro 1 -->
+                            <div class="carousel-item active">
+                                <div class="row row-cols-1 row-cols-md-4 g-4">
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+1"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Drácula</h5>
+                                                <p class="card-text">O clássico vampiro de Bram Stoker.</p>
+                                                <p class="card-text">Preço: R$ 24,90</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 2 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+2"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">It: A Coisa</h5>
+                                                <p class="card-text">Um palhaço aterrorizante e uma cidade assombrada.</p>
+                                                <p class="card-text">Preço: R$ 32,00</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 3 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+3"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Iluminado</h5>
+                                                <p class="card-text">O hotel assombrado por Stephen King.</p>
+                                                <p class="card-text">Preço: R$ 28,50</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 4 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+4"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Entrevista com o Vampiro</h5>
+                                                <p class="card-text">Uma conversa com o vampiro de Anne Rice.</p>
+                                                <p class="card-text">Preço: R$ 29,80</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 5 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+5"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">O Chamado de Cthulhu</h5>
+                                                <p class="card-text">Um clássico do terror cósmico.</p>
+                                                <p class="card-text">Preço: R$ 26,70</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Livro 6 -->
+                                    <div class="col mb-4">
+                                        <div class="card h-100">
+                                            <img src="https://via.placeholder.com/200x300?text=Capa+Terror+Livro+6"
+                                                class="card-img-top" alt="Capa do Livro">
+                                            <div class="card-body">
+                                                <h5 class="card-title">Psicose</h5>
+                                                <p class="card-text">O suspense psicológico de Robert Bloch.</p>
+                                                <p class="card-text">Preço: R$ 23,95</p>
+                                                <a href="#" class="btn btn-primary">Ver detalhes</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#terror-carousel"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#terror-carousel"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Próximo</span>
+                        </button>
+                    </div>
+                </div>
             </div>
-        </section>
+        </div>
+        <!-- Rodapé -->
+        <footer class="container py-5">
+            <div class="row">
+                <div class="col-12 col-md">
+                    <h5 class="fw-light">Categorias</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="#comedia" class="link-secondary">Comédia</a></li>
+                        <li><a href="#ficcao" class="link-secondary">Ficção Científica</a></li>
+                        <li><a href="#aventura" class="link-secondary">Aventura</a></li>
+                        <li><a href="#terror" class="link-secondary">Terror</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5 class="fw-light">Sobre</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="#" class="link-secondary">Informações</a></li>
+                        <li><a href="#" class="link-secondary">Privacidade</a></li>
+                        <li><a href="#" class="link-secondary">Termos</a></li>
+                        <li><a href="#" class="link-secondary">Cookies</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5 class="fw-light">Ajuda</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="#" class="link-secondary">Contato</a></li>
+                        <li><a href="#" class="link-secondary">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md">
+                    <h5 class="fw-light">Redes Sociais</h5>
+                    <ul class="list-unstyled text-small">
+                        <li><a href="#" class="link-secondary">Facebook</a></li>
+                        <li><a href="#" class="link-secondary">Instagram</a></li>
+                        <li><a href="#" class="link-secondary">Twitter</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between align-items-center border-top pt-4">
+                <small class="text-muted">&copy; 2024 Nome da Livraria.</small>
+            </div>
+        </footer>
     </main>
-
-    <footer class="bg-dark text-light text-center py-3">
-        <p>&copy; 2024 Biblion. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Bootstrap JS e dependências opcionais -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-kQ/ZUhZsXsApoP/QAmpfpD7psDl+OL64VjWDsSb2jzhKj9e8eayQ3R20Ntz4hfsr"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-Fj3xjzjrl6w5Bz+5zLPTZp00FHszl9bo8E8P6LH8OuPbshM5zDP3Yl2+3Jgk1lzs"
-        crossorigin="anonymous"></script>
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-PHpAvcEk5tLJ0OaZ8Lda0y3nYm0pjqCE0MPbl6DHS8vZl12T5GY6f0MNEy2P1r8v" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
